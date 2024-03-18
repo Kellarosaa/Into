@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Website Runner Service</title>
+    <title>Enhanced Website Runner Service</title>
 </head>
 <body>
     <form id="websiteForm">
@@ -14,9 +14,13 @@
     
     <script>
         function runWebsite() {
-            const websiteUrl = document.getElementById('websiteUrl').value;
-            const modifiedUrl = `https://www.example.com/service/${websiteUrl}`;
-            document.getElementById('websiteFrame').src = modifiedUrl;
+            const websiteUrl = document.getElementById('websiteUrl').value.trim();
+            if (websiteUrl) {
+                const modifiedUrl = `https://www.example.com/service/${websiteUrl}`;
+                document.getElementById('websiteFrame').src = modifiedUrl;
+            } else {
+                alert('Please enter a valid website URL.');
+            }
         }
     </script>
 </body>
