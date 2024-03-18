@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Runner Service</title>
+</head>
+<body>
+    <form id="websiteForm">
+        <label for="websiteUrl">Enter Website URL:</label><br>
+        <input type="text" id="websiteUrl" name="websiteUrl"><br><br>
+        <button type="button" onclick="runWebsite()">Run Website</button>
+    </form>
+    
+    <iframe id="websiteFrame" width="100%" height="500"></iframe>
+    
+    <script>
+        function runWebsite() {
+            const websiteUrl = document.getElementById('websiteUrl').value;
+            const modifiedUrl = `https://www.example.com/service/${websiteUrl}`;
+            document.getElementById('websiteFrame').src = modifiedUrl;
+        }
+    </script>
+</body>
+</html>
